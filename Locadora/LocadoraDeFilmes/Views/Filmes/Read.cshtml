@@ -1,0 +1,35 @@
+﻿@model Filme
+
+@if (Model == null)
+{
+    <h1>FILME NÃO EXISTE</h1>
+    <a asp-action="Index">Voltar</a>
+}
+else
+{
+
+    <h1>Visualizando filme @Model.Id</h1>
+
+
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Id)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Id)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Nome)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Nome)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Sinopse)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Sinopse)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Preco)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Preco)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Lancamento)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Lancamento)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Duracao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Duracao)</dd>
+    </dl>
+    <br />
+    <a class="btn btn-info" asp-controller="Filmes" asp-action="Index">Voltar</a>
+}

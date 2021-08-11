@@ -1,0 +1,82 @@
+﻿@model List<Filme>
+
+
+<h2>Lista de Filmes</h2>
+<br />
+
+<div id="divBusca">
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" name="busca" placeholder="Pesquisar" aria-label="Pesquisar">
+        &nbsp; &nbsp;
+        <select name="service" class="form-control">
+            <option value="sql" selected>Dados SQL</option>
+            <option value="static">Dados Estáticos</option>
+        </select>
+        &nbsp; &nbsp;
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+</div>
+
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.First().Id)</th>
+            <th>@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+            <th>@Html.DisplayNameFor(Model => Model.First().Lancamento)</th>
+            <th>@Html.DisplayNameFor(Model => Model.First().Duracao)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Filme filme in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(Model => filme.Id)</td>
+                <td>@Html.DisplayFor(Model => filme.Nome)</td>
+                <td>@Html.DisplayFor(Model => filme.Lancamento)</td>
+                <td>@Html.DisplayFor(Model => filme.Duracao)</td>
+                <td>
+                    @if (ViewBag.source == "sql")
+                        {
+                            <a asp-action="Read" asp-route-id="@filme.Id">Visualizar |</a>
+                            <a asp-action="Update" asp-route-id ="@filme.Id">Atualizar |</a>
+                            <a asp-action="Confirm" asp-route-id ="@filme.Id"> Excluir</a>
+                        }
+                    else
+                        {
+                            <p>Não há ações disponíveis para o método estático</p>
+                        }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-success" asp-controller="Filmes" asp-action="Create">Adicionar novo Filme</a>
+
+<hr />
+
+@if (ViewBag.totFilmes != null)
+{
+    <h4>O total de filmes é: @ViewBag.totFilmes</h4>
+}
+
+<br />
+@if (ViewBag.totDuracao != null)
+{
+    <h4>A duração total é de: @ViewBag.totDuracao minutos.</h4>
+}
+
+<br />
+@if (ViewBag.maisRecente != null)
+{
+    <h4>O Filme mais recente é: @ViewBag.MaisRecente</h4>
+}
+
+<br />
+@if (ViewBag.maisCaro != null)
+{
+    <h4>O Filme mais caro é: @ViewBag.MaisCaro</h4>
+}
+

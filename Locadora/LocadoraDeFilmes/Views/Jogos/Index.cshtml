@@ -1,0 +1,35 @@
+﻿@model List<Jogo>
+
+    <h2>LISTA DE JOGOS DISPONÍVEIS</h2>
+    <br />
+
+    <a class="btn btn-info mb-3" asp-controller="Jogos" asp-action="Create">Adicionar novo Jogo</a>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(Model => Model.First().Id)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Preco)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Lancamento)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Jogo jogo in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(Model => jogo.Id)</td>
+                    <td>@Html.DisplayFor(Model => jogo.Nome)</td>
+                    <td>@Html.DisplayFor(Model => jogo.Preco)</td>
+                    <td>@Html.DisplayFor(Model => jogo.Lancamento)</td>
+                    <td>                      
+                        <a asp-action="Read" asp-route-id="@jogo.Id">Visualizar</a> |
+                        <a asp-action="Update" asp-route-id="@jogo.Id">Atualizar</a> |
+                        <a asp-action="Confirm" asp-route-id="@jogo.Id">Excluir</a>                      
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
