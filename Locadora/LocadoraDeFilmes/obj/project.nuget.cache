@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wJKy0AGBqZyfN+wboMr1mwmzF7QjJFfNWm4ReT3Kx4X791D8lSfEGeoeMHrBPRmRElQeYvW4XdN6Fki4z4V5IA==",
+  "dgSpecHash": "eYgzYzZ/50+E/jIBQSl/fliWIHCuod99UWAaXph1f3c/syUsEXJADt9hFBm27Idw3yMR2m1v9R7/VxyH1DnVLA==",
   "success": true,
-  "projectFilePath": "D:\\O Talito\\Documents\\Cursos\\Programação e Desenvolvimento\\Blue EdTech\\Modulo 03 - BackEnd\\Projeto Locadora\\LocadoraDeFilmes\\LocadoraDeFilmes.csproj",
+  "projectFilePath": "D:\\O Talito\\Documents\\Cursos\\Programação e Desenvolvimento\\Blue EdTech\\Modulo 03 - BackEnd\\LocadoraProject\\Locadora\\LocadoraDeFilmes\\LocadoraDeFilmes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thales Ribero\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Thales Ribero\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.8\\microsoft.aspnetcore.mvc.razor.extensions.5.0.8.nupkg.sha512",
